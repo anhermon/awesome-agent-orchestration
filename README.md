@@ -20,6 +20,7 @@ This list replaces a discontinued experiment (`anhermon/agent-infra`) that reinv
 | If you need… | Start here |
 |---|---|
 | Org chart, budgets, goals, multi-agent “company” governance | [Paperclip](https://github.com/paperclipai/paperclip) |
+| Shared project tasks, manager delegation, persistent sandboxes, and human review | [Tale](https://github.com/tale-project/tale) |
 | Local SQLite + multi-repo worktrees + ticket sync + agent workflows | [Conductor](https://github.com/artushin/conductor-ai) |
 | Software factory: plan → execute → review in isolated worktrees | [Fusion](https://github.com/Runfusion/Fusion) |
 | Markdown tickets → staged pipelines → any CLI agent | [Kontora](https://github.com/worksonmyai/kontora) |
@@ -28,6 +29,7 @@ This list replaces a discontinued experiment (`anhermon/agent-infra`) that reinv
 ## Agent company / control planes
 
 - [Paperclip](https://github.com/paperclipai/paperclip) - MIT. Self-hosted control plane for teams of AI agents: companies, org charts, tasks, heartbeats, budgets, board governance. Bring your own runtimes (Claude Code, Codex, CLI agents, webhooks). Prefer this over inventing another ticket/run OS.
+- [Tale](https://github.com/tale-project/tale) - MIT. Shared project workspace for people and AI agents, with manager delegation, persistent sandbox workspaces, and human review of reports and delivered files. Self-hosted or managed deployment.
 
 ## Local-first coding factories
 
