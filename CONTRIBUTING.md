@@ -13,6 +13,10 @@ Open-source tools for governed multi-agent work: tickets and runs, worktree isol
 - Preview or alpha status is stated in the entry.
 - Format: `- [Name](link) - License. What it actually does.` One line, sentence case, no marketing words.
 
+## How the list is maintained
+
+A weekly workflow (`scripts/audit.py`) opens or updates one tracking issue listing entries whose repository is gone, archived, renamed, or past the 12-month bar. A monthly hands-on pass re-runs entries with a stub agent and re-checks descriptions, which the script cannot do.
+
 ## Removals
 
 Open an issue with evidence: last commit date, archive or sunset banner, redirect target, or a failing run.
