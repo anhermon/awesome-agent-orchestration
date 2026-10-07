@@ -19,6 +19,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - Org chart, budgets, goals, and governance for a multi-agent "company": Paperclip.
 - Markdown tickets, staged pipelines with retries, any CLI agent: Kontora.
 - Many coding agents in parallel, each in its own Git worktree, with PR and CI state on one board: Agent Orchestrator.
+- GitHub issues to per-issue worktrees and PR status, headless agent CLIs: Vigilante.
 - Plan, build, and review loops in isolated worktrees (early preview): Fusion.
 - Parallel agent sessions in a terminal, one worktree each: Claude Squad.
 
@@ -30,6 +31,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 - [Kontora](https://github.com/worksonmyai/kontora) - Apache-2.0. Tickets as markdown files, multi-stage pipelines with retries, one worktree and tmux session per ticket, web and TUI kanban, any CLI agent.
 - [Agent Orchestrator](https://github.com/Untrivial-ai/agent-orchestrator) - Apache-2.0. Local daemon and desktop app that spawns coding agents (Claude Code, Codex, Cursor, opencode, and others) into per-task Git worktrees, with an orchestrator agent and a board of PR, CI, and review state. Ticket intake is behind a flag.
+- [Vigilante](https://github.com/aliengiraffe/vigilante) - Apache-2.0. Go CLI and daemon that turns GitHub issues into per-issue Git worktrees and branches, launches a headless coding-agent CLI (Codex, Claude Code, Gemini, opencode) in each, and records session state, blocked reasons, and PR status. GitHub is the only issue backend; young project with one dominant author.
 - [Fusion](https://github.com/Runfusion/Fusion) - MIT, early preview. Software factory that runs plan, build, and review loops in isolated worktrees, with workflows and a dashboard, against any model.
 - [Claude Squad](https://github.com/smtg-ai/claude-squad) - AGPL-3.0. Terminal app on tmux that runs Claude Code, Codex, Gemini, Aider, and other CLI agents in parallel, one Git worktree and branch per session. It manages sessions only: no tickets and no run log.
 
