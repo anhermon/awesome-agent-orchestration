@@ -1,0 +1,33 @@
+name: Entry audit
+
+on:
+  schedule:
+    # Weekly, Tuesday 07:00 UTC
+    - cron: "0 7 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check every GitHub-hosted entry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/audit.py README.md | tee report.md
+      - name: Open or update the tracking issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create audit --description "Automated entry audit" --color BFD4F2 2>/dev/null || true
+          existing=$(gh issue list --label audit --state open --json number --jq '.[0].number // empty')
+          if grep -qE '^## (remove|fix|check|watch)$' report.md; then
+            if [ -n "$existing" ]; then gh issue edit "$existing" --body-file report.md
+            else gh issue create --title "Entry audit: action needed" --label audit --body-file report.md; fi
+          elif [ -n "$existing" ]; then
+            gh issue close "$existing" --comment "Latest audit found nothing to act on."
+          fi
