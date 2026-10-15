@@ -4,7 +4,7 @@
 
 Before building a private control plane for these problems, check whether one of the tools below already does the job, adopt it, and contribute upstream if it is missing a piece you need.
 
-Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are young and written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein), so check the bus factor before you depend on them.
+Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein), and herdr, Agent Deck and Archon have a clear lead author too, so check the bus factor before you depend on any of them.
 
 ## Contents
 
@@ -49,7 +49,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 ## Workflow engines
 
-- [Archon](https://github.com/coleam00/Archon) - MIT workflow engine that runs YAML-defined workflows of agent steps (Claude Code, Codex, or Pi) in one Git worktree per run outside the repository, records each run's status and transcript, and sends anonymous telemetry by default.
+- [Archon](https://github.com/coleam00/Archon) - MIT workflow engine that runs YAML-defined workflows of agent steps (Claude Code, Codex, or Pi) in one Git worktree per run outside the repository, records each run's status and transcript, and sends usage telemetry tied to a random install ID by default.
 
 ## Terminal session managers
 
