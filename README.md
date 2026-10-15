@@ -30,15 +30,15 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 ## Agent company / control planes
 
-- [Paperclip](https://github.com/paperclipai/paperclip) - MIT. Self-hosted control plane for teams of AI agents: companies, org charts, tasks, heartbeats, budgets, and board governance. Bring your own runtimes (Claude Code, Codex, CLI agents, webhooks). Telemetry is on by default.
+- [Paperclip](https://github.com/paperclipai/paperclip) - Self-hosted MIT-licensed control plane for teams of AI agents, with companies, org charts, tasks, heartbeats, budgets, and board governance, running your own runtimes (Claude Code, Codex, CLI agents, webhooks); telemetry is on by default.
 
 ## Local-first coding factories
 
-- [Kontora](https://github.com/worksonmyai/kontora) - Apache-2.0. Tickets as markdown files, multi-stage pipelines with retries, one worktree and tmux session per ticket, web and TUI kanban, any CLI agent.
-- [Agent Orchestrator](https://github.com/Untrivial-ai/agent-orchestrator) - Apache-2.0. Local daemon and desktop app that spawns coding agents (Claude Code, Codex, Cursor, opencode, and others) into per-task Git worktrees, with an orchestrator agent and a board of PR, CI, and review state. Ticket intake is behind a flag.
-- [Vigilante](https://github.com/aliengiraffe/vigilante) - Apache-2.0. Go CLI and daemon that turns GitHub issues into per-issue Git worktrees and branches, launches a headless coding-agent CLI (Codex, Claude Code, Gemini, opencode) in each, and records session state, blocked reasons, and PR status. GitHub is the only issue backend; young project with one dominant author.
-- [Fusion](https://github.com/Runfusion/Fusion) - MIT, early preview. Software factory that runs plan, build, and review loops in isolated worktrees, with workflows and a dashboard, against any model.
-- [Claude Squad](https://github.com/smtg-ai/claude-squad) - AGPL-3.0. Terminal app on tmux that runs Claude Code, Codex, Gemini, Aider, and other CLI agents in parallel, one Git worktree and branch per session. It manages sessions only: no tickets and no run log.
+- [Kontora](https://github.com/worksonmyai/kontora) - Apache-2.0 tool that keeps tickets as markdown files and runs them through multi-stage pipelines with retries, one worktree and tmux session per ticket, a web and TUI kanban, and any CLI agent.
+- [Agent Orchestrator](https://github.com/OrchestratorInc/agent-orchestrator) - Apache-2.0 local daemon and desktop app that spawns coding agents (Claude Code, Codex, Cursor, opencode, and others) into per-task Git worktrees, with an orchestrator agent and a board of PR, CI, and review state, and ticket intake behind a flag.
+- [Vigilante](https://github.com/aliengiraffe/vigilante) - Apache-2.0 Go CLI and daemon that turns GitHub issues into per-issue Git worktrees and branches, launches a headless coding-agent CLI (Codex, Claude Code, Gemini, opencode) in each, and records session state, blocked reasons, and PR status, with GitHub as the only issue backend and one dominant author.
+- [Fusion](https://github.com/Runfusion/Fusion) - Early-preview MIT-licensed software factory that runs plan, build, and review loops in isolated worktrees, with workflows and a dashboard, against any model.
+- [Claude Squad](https://github.com/smtg-ai/claude-squad) - AGPL-3.0-licensed terminal app on tmux that runs Claude Code, Codex, Gemini, Aider, and other CLI agents in parallel, one Git worktree and branch per session, managing sessions only, with no tickets and no run log.
 
 ## Boards and governed runs
 
