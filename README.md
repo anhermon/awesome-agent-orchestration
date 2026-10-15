@@ -12,6 +12,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - [Agent company / control planes](#agent-company--control-planes)
 - [Local-first coding factories](#local-first-coding-factories)
 - [Boards and governed runs](#boards-and-governed-runs)
+- [Workflow engines](#workflow-engines)
 - [Terminal session managers](#terminal-session-managers)
 - [Related: observability](#related-observability)
 - [Anti-patterns](#anti-patterns)
@@ -28,6 +29,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - A persistent terminal runtime with an API agents can drive and optional worktrees: herdr.
 - A local board that runs CLI agents in parallel, one worktree per card (research preview): Cline Kanban.
 - A plan of tasks run across many CLI agents, a worktree per task, with a hash-chained run journal and auto-merge: Bernstein.
+- YAML workflows of agent steps, one worktree per run, with a recorded run status and transcript: Archon.
 
 ## Agent company / control planes
 
@@ -44,6 +46,10 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 - [Cline Kanban](https://github.com/cline/kanban) - Apache-2.0 local web board that runs CLI agents (Claude Code, Codex, Gemini, and others) in parallel, one ephemeral Git worktree per card, and records each session's state and exit code; Research Preview.
 - [Bernstein](https://github.com/sipyourdrink-ltd/bernstein) - Apache-2.0 Python orchestrator that runs a plan file or goal across CLI agent adapters (Claude Code, Codex, Gemini, and many more), one Git worktree and branch per task, writes a hash-chained run journal, and merges each task's branch back into the current branch.
+
+## Workflow engines
+
+- [Archon](https://github.com/coleam00/Archon) - MIT workflow engine that runs YAML-defined workflows of agent steps (Claude Code, Codex, or Pi) in one Git worktree per run outside the repository, records each run's status and transcript, and sends anonymous telemetry by default.
 
 ## Terminal session managers
 
