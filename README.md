@@ -23,7 +23,8 @@ Entries say what a project does, not what it markets, and carry its license and 
 - Many coding agents in parallel, each in its own Git worktree, with PR and CI state on one board: Agent Orchestrator.
 - GitHub issues to per-issue worktrees and PR status, headless agent CLIs: Vigilante.
 - Plan, build, and review loops in isolated worktrees (early preview): Fusion.
-- Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager, Agent Deck.
+- Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager.
+- Terminal session status across agents, with optional per-session worktrees: Agent Deck.
 - A persistent terminal runtime with an API agents can drive and optional worktrees: herdr.
 - A local board that runs CLI agents in parallel, one worktree per card (research preview): Cline Kanban.
 - A plan of tasks run across many CLI agents, a worktree per task, with a hash-chained run journal and auto-merge: Bernstein.
