@@ -11,6 +11,8 @@ Entries say what a project does, not what it markets, and carry its license and 
 - [The problem map](#the-problem-map)
 - [Agent company / control planes](#agent-company--control-planes)
 - [Local-first coding factories](#local-first-coding-factories)
+- [Boards and governed runs](#boards-and-governed-runs)
+- [Terminal session managers](#terminal-session-managers)
 - [Related: observability](#related-observability)
 - [Anti-patterns](#anti-patterns)
 
@@ -21,7 +23,10 @@ Entries say what a project does, not what it markets, and carry its license and 
 - Many coding agents in parallel, each in its own Git worktree, with PR and CI state on one board: Agent Orchestrator.
 - GitHub issues to per-issue worktrees and PR status, headless agent CLIs: Vigilante.
 - Plan, build, and review loops in isolated worktrees (early preview): Fusion.
-- Parallel agent sessions in a terminal, one worktree each: Claude Squad.
+- Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager, Agent Deck.
+- A persistent terminal runtime with a worktree per workspace and an API agents can drive: herdr.
+- A local board that runs CLI agents in parallel, one worktree per card (research preview): Cline Kanban.
+- A plan of tasks run across many CLI agents with a hash-chained run journal: Bernstein.
 
 ## Agent company / control planes
 
@@ -34,6 +39,17 @@ Entries say what a project does, not what it markets, and carry its license and 
 - [Vigilante](https://github.com/aliengiraffe/vigilante) - Apache-2.0. Go CLI and daemon that turns GitHub issues into per-issue Git worktrees and branches, launches a headless coding-agent CLI (Codex, Claude Code, Gemini, opencode) in each, and records session state, blocked reasons, and PR status. GitHub is the only issue backend; young project with one dominant author.
 - [Fusion](https://github.com/Runfusion/Fusion) - MIT, early preview. Software factory that runs plan, build, and review loops in isolated worktrees, with workflows and a dashboard, against any model.
 - [Claude Squad](https://github.com/smtg-ai/claude-squad) - AGPL-3.0. Terminal app on tmux that runs Claude Code, Codex, Gemini, Aider, and other CLI agents in parallel, one Git worktree and branch per session. It manages sessions only: no tickets and no run log.
+
+## Boards and governed runs
+
+- [Cline Kanban](https://github.com/cline/kanban) - Apache-2.0 local web board that runs CLI agents (Claude Code, Codex, Gemini, and others) in parallel, one ephemeral Git worktree per card, and records each session's state and exit code; Research Preview.
+- [Bernstein](https://github.com/sipyourdrink-ltd/bernstein) - Apache-2.0 Python orchestrator that runs a plan file or goal across CLI agent adapters (Claude Code, Codex, Gemini, and many more), one Git worktree and branch per task, and writes a hash-chained run journal.
+
+## Terminal session managers
+
+- [ccmanager](https://github.com/kbwo/ccmanager) - MIT terminal app that runs Claude Code, Gemini CLI, Codex CLI, and other CLI agents in parallel, one Git worktree per session, with busy, waiting, and idle states and no tmux dependency, managing sessions only, with no tickets and no run log.
+- [Agent Deck](https://github.com/asheshgoplani/agent-deck) - MIT terminal session manager for Claude, Gemini, OpenCode, Codex, and other agents that keeps one Git worktree per session under the repository's .worktrees folder and shows session status, including errors and nonzero exits.
+- [herdr](https://github.com/herdrdev/herdr) - Apache-2.0 terminal runtime with a persistent background server that gives each agent workspace its own Git worktree outside the repository and exposes a socket and CLI API that agents can drive, with no run log.
 
 ## Related: observability
 
