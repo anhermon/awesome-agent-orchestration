@@ -17,9 +17,9 @@ These are the thresholds every entry is held to, at submission and at each audit
 | 5 | Real docs | A README or docs site with install and usage steps. Mostly generated boilerplate does not count. | Decline or remove. |
 | 6 | In scope | It coordinates, supervises, routes work to, or isolates coding or other agents (see "What belongs here"). | Decline, recategorize, or remove. |
 | 7 | License stated | A license file in the repository, and the license named in the entry. Open-core (any `ee/` or `enterprise/` directory under a separate license), source-available, AGPL, and hosted-backend projects say so in the entry. | Fix the entry; decline if there is no license file. |
-| 8 | Hands-on | You installed or built it, ran a task with a stub agent (a shell script is enough), and confirmed that work is isolated, that the run is recorded, and that a failure is recorded as a failure. The PR says what you ran and what you could not check. | Decline. |
-| 9 | One entry, one place | Each project appears once, in the category it best fits. Preview or alpha status is stated in the entry. | Merge or move. |
-| 10 | Format | `- [Name](link) - What it actually does.` Sentence case, one line, one sentence, ends with a period, describes behavior rather than positioning, and names the license inside that sentence. No marketing words, no feature lists copied from a landing page. | Reword. |
+| 8 | Hands-on | You installed or built it, ran a task with a stub agent (a shell script is enough), and confirmed that work is isolated. Where the tool records runs, a failure must be recorded as a failure; session managers without run logs say so in the entry. The PR says what you ran and what you could not check. | Decline. |
+| 9 | One entry, one place | Each project appears once, in the category it best fits. | Merge or move. |
+| 10 | Format | `- [Name](link) - What it actually does.` Sentence case, one line, one sentence, ends with a period, describes behavior rather than positioning, and names the license inside that sentence. Preview or alpha status is stated in the entry. No marketing words, no feature lists copied from a landing page. | Reword. |
 
 Entries are roughly ordered by how central they are to the category, not alphabetically.
 
