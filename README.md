@@ -36,7 +36,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 ## Agent company / control planes
 
 - [Paperclip](https://github.com/paperclipai/paperclip) - Self-hosted MIT-licensed control plane for teams of AI agents, with companies, org charts, tasks, heartbeats, budgets, and board governance, running your own runtimes (Claude Code, Codex, CLI agents, webhooks); telemetry is on by default.
-- [Claudexor](https://github.com/razzant/claudexor) - MIT local control plane that runs Claude Code, Codex, Cursor CLI, and OpenCode behind one interface, keeps write turns as patches in a separate workspace until you apply them, records each run's status and artifacts, and offers best-of-N runs across harnesses; its CONTRIBUTING says it is developed largely by AI coding agents under one human maintainer.
+- [Claudexor](https://github.com/razzant/claudexor) - MIT local control plane that runs Claude Code, Codex, Cursor CLI, and OpenCode behind one interface, keeps write turns as patches in a separate workspace until you apply them, records each run's status and artifacts, and offers best-of-N runs across harnesses; its CONTRIBUTING says it is developed largely by external AI coding agents, and its README names one human author.
 
 ## Local-first coding factories
 
