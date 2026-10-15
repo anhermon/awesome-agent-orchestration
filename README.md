@@ -49,7 +49,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 ## Workflow engines
 
-- [Archon](https://github.com/coleam00/Archon) - MIT workflow engine that runs YAML-defined workflows of agent steps (Claude Code, Codex, or Pi) in one Git worktree per run outside the repository, records each run's status and transcript, and sends anonymous telemetry by default.
+- [Archon](https://github.com/coleam00/Archon) - MIT workflow engine that runs YAML-defined workflows of agent steps (Claude Code, Codex, or Pi) in one Git worktree per run outside the repository, records each run's status and transcript, and sends usage telemetry tied to a random install ID by default.
 
 ## Terminal session managers
 
