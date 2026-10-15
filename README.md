@@ -43,13 +43,13 @@ Entries say what a project does, not what it markets, and carry its license and 
 ## Boards and governed runs
 
 - [Cline Kanban](https://github.com/cline/kanban) - Apache-2.0 local web board that runs CLI agents (Claude Code, Codex, Gemini, and others) in parallel, one ephemeral Git worktree per card, and records each session's state and exit code; Research Preview.
-- [Bernstein](https://github.com/sipyourdrink-ltd/bernstein) - Apache-2.0 Python orchestrator that runs a plan file or goal across CLI agent adapters (Claude Code, Codex, Gemini, and many more), one Git worktree and branch per task, and writes a hash-chained run journal.
+- [Bernstein](https://github.com/sipyourdrink-ltd/bernstein) - Apache-2.0 Python orchestrator that runs a plan file or goal across CLI agent adapters (Claude Code, Codex, Gemini, and many more), one Git worktree and branch per task, writes a hash-chained run journal, and merges each task's branch back into the current branch.
 
 ## Terminal session managers
 
-- [ccmanager](https://github.com/kbwo/ccmanager) - MIT terminal app that runs Claude Code, Gemini CLI, Codex CLI, and other CLI agents in parallel, one Git worktree per session, with busy, waiting, and idle states and no tmux dependency, managing sessions only, with no tickets and no run log.
-- [Agent Deck](https://github.com/asheshgoplani/agent-deck) - MIT terminal session manager for Claude, Gemini, OpenCode, Codex, and other agents that keeps one Git worktree per session under the repository's .worktrees folder and shows session status, including errors and nonzero exits.
-- [herdr](https://github.com/herdrdev/herdr) - Apache-2.0 terminal runtime with a persistent background server that gives each agent workspace its own Git worktree outside the repository and exposes a socket and CLI API that agents can drive, with no run log.
+- [ccmanager](https://github.com/kbwo/ccmanager) - MIT terminal app that runs Claude Code, Gemini CLI, Codex CLI, and other CLI agents in parallel, one Git worktree per session, shows busy, waiting, and idle states without needing tmux, and manages sessions only, with no tickets, run log, or failure record.
+- [Agent Deck](https://github.com/asheshgoplani/agent-deck) - MIT terminal session manager for Claude, Gemini, OpenCode, Codex, and other agents that can place a session in its own Git worktree under the repository's .worktrees folder and shows session status, including errors.
+- [herdr](https://github.com/herdrdev/herdr) - Apache-2.0 terminal runtime with a persistent background server that hosts agent panes, can create a Git worktree for a workspace outside the repository, and exposes a socket and CLI API that agents can drive, with no run log or failure record.
 
 ## Related: observability
 
