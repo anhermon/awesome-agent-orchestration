@@ -4,7 +4,7 @@
 
 Before building a private control plane for these problems, check whether one of the tools below already does the job, adopt it, and contribute upstream if it is missing a piece you need.
 
-Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are young and written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein), so check the bus factor before you depend on them.
+Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein), and herdr, Agent Deck and Archon have a clear lead author too, so check the bus factor before you depend on any of them.
 
 ## Contents
 
