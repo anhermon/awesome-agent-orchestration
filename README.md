@@ -22,6 +22,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - Org chart, budgets, goals, and governance for a multi-agent "company": Paperclip.
 - Markdown tickets, staged pipelines with retries, any CLI agent: Kontora.
 - Many coding agents in parallel, each in its own Git worktree, with PR and CI state on one board: Agent Orchestrator.
+- A desktop app and scriptable CLI that run agents side by side, a worktree each, with a headless runtime: Orca.
 - GitHub issues to per-issue worktrees and PR status, headless agent CLIs: Vigilante.
 - Plan, build, and review loops in isolated worktrees (early preview): Fusion.
 - Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager.
@@ -42,6 +43,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 - [Kontora](https://github.com/worksonmyai/kontora) - Apache-2.0 tool that keeps tickets as markdown files and runs them through multi-stage pipelines with retries, one worktree and tmux session per ticket, a web and TUI kanban, and any CLI agent.
 - [Agent Orchestrator](https://github.com/OrchestratorInc/agent-orchestrator) - Apache-2.0 local daemon and desktop app that spawns coding agents (Claude Code, Codex, Cursor, opencode, and others) into per-task Git worktrees, with an orchestrator agent and a board of PR, CI, and review state, ticket intake behind a flag, and remote telemetry in production desktop releases that can include your GitHub owner or username.
+- [Orca](https://github.com/stablyai/orca) - MIT Electron desktop app with a scriptable `orca` CLI and a headless `orca serve` runtime that launches CLI agents (Claude Code, Codex, OpenCode, and others) in one Git worktree per task outside the repository, with no failure record beyond the terminal output, and documents anonymous usage telemetry with an off switch.
 - [Vigilante](https://github.com/aliengiraffe/vigilante) - Apache-2.0 Go CLI and daemon that turns GitHub issues into per-issue Git worktrees and branches, launches a headless coding-agent CLI (Codex, Claude Code, Gemini, opencode) in each, and records session state, blocked reasons, and PR status, with GitHub as the only issue backend.
 - [Fusion](https://github.com/Runfusion/Fusion) - Early-preview MIT-licensed software factory that runs plan, build, and review loops in isolated worktrees, with workflows and a dashboard, against any model.
 
