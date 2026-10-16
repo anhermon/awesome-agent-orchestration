@@ -4,7 +4,7 @@
 
 Before building a private control plane for these problems, check whether one of the tools below already does the job, adopt it, and contribute upstream if it is missing a piece you need.
 
-Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein, takt), and herdr, Agent Deck, Archon and Claudexor have a clear lead author too, so check the bus factor before you depend on any of them.
+Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein, takt), and herdr, Agent Deck, Archon, Claudexor and dmux have a clear lead author too, so check the bus factor before you depend on any of them.
 
 ## Contents
 
@@ -25,8 +25,8 @@ Entries say what a project does, not what it markets, and carry its license and 
 - A desktop app and scriptable CLI that run agents side by side, a worktree each, with a headless runtime: Orca.
 - GitHub issues to per-issue worktrees and PR status, headless agent CLIs: Vigilante.
 - Plan, build, and review loops in isolated worktrees (early preview): Fusion.
-- Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager.
-- Terminal session status across agents, with optional per-session worktrees: Agent Deck.
+- Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager, dmux.
+- Terminal session status across agents, with optional per-session worktrees: Agent Deck, Agent of Empires.
 - A persistent terminal runtime with an API agents can drive and optional worktrees: herdr.
 - A local board that runs CLI agents in parallel, one worktree per card (research preview): Cline Kanban.
 - A plan of tasks run across many CLI agents, a worktree per task, with a hash-chained run journal and auto-merge: Bernstein.
