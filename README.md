@@ -75,7 +75,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 ## Hosted and proprietary products
 
-Proprietary or hosted products that coordinate several agents, read from each vendor's public docs on 2026-10-16 by someone outside the vendor. None was run or tried, so isolation and failure handling are unchecked for every entry. The bar is in [CONTRIBUTING](CONTRIBUTING.md#hosted-and-proprietary-products).
+Proprietary or hosted products that coordinate several agents, read from each vendor's public docs on 2026-10-16 by someone outside the vendor. None was run or tried, so isolation between agents, failure handling, and data handling are unchecked for every entry. The bar is in [CONTRIBUTING](CONTRIBUTING.md#hosted-and-proprietary-products).
 
 - [Warp Oz](https://docs.warp.dev/platform/orchestration/) - Proprietary hosted platform (the Warp client is AGPL-3.0) where a parent agent spawns child agents locally or in cloud environments, one level deep, and exchanges messages and run states with them; not run.
 - [Devin](https://docs.devin.ai/work-with-devin/advanced-capabilities) - Proprietary hosted agent whose coordinator session starts child "managed Devins" in separate VMs, messages them, and is notified when they finish or need input; not run.
@@ -83,9 +83,9 @@ Proprietary or hosted products that coordinate several agents, read from each ve
 - [Claude Code agent teams](https://code.claude.com/docs/en/agent-teams) - Experimental, off-by-default feature of the proprietary, local Claude Code in which a lead session spawns teammate sessions that message each other and, in sessions with the Task tools, share a task list; not run.
 - [OpenAI Codex](https://learn.chatgpt.com/docs/agent-configuration/subagents) - Proprietary local and hosted OpenAI agent (the Codex CLI is Apache-2.0) whose main thread, when asked, spawns parallel subagents that inherit its sandbox and approvals and return their results to it; not run.
 - [GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agent-capabilities/choosing-and-delegating-agent-work/agent-management) - Proprietary GitHub-hosted agent that runs multiple agent sessions concurrently from an Agents tab in each repository, with custom agents and steering of a running session; not run.
-- [Kiro](https://kiro.dev/docs/custom-agents/subagents/) - Proprietary IDE and CLI whose main agent spawns sub-agents that run in parallel, each with its own context window while sharing the workspace and permissions configuration, and aggregates their results; not run.
+- [Kiro](https://kiro.dev/docs/custom-agents/subagents/) - Proprietary IDE and CLI whose main agent spawns sub-agents that run in parallel, each with its own context window while sharing the workspace files and MCP servers, and aggregates their results; not run.
 - [Cursor](https://cursor.com/docs/subagents) - Proprietary editor and hosted service whose agent launches parallel subagents that share its checkout by default, or each get their own worktree or cloud VM and branch when asked; not run.
-- [Amp](https://ampcode.com/docs/orbs/agent-to-agent) - Proprietary coding agent with hosted orbs whose agents can start other agents in another project, an orb, or a runner machine, send them instructions and files, and bring results back into the current thread; not run.
+- [Amp](https://ampcode.com/docs/orbs/agent-to-agent) - Proprietary hosted coding agent whose agents can start other agents in another project, an orb, or a runner machine, send them instructions and files, and bring results back into the current thread; not run.
 - [Devin Desktop](https://docs.devin.ai/desktop/agent-command-center) - Proprietary desktop IDE whose Agent Command Center is a kanban board, grouped by status, over local agent sessions and cloud Devin sessions on their own VMs; not run.
 
 ## Related: observability
