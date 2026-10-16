@@ -38,7 +38,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - One control plane over several agent CLIs, with write turns kept as patches until you apply them: Claudexor.
 - A lead agent that spawns and coordinates child agents, as a hosted or proprietary product: Warp Oz, Devin, Factory Missions, Claude Code agent teams, OpenAI Codex, Kiro, Cursor.
 - Many parallel agent sessions managed from one hosted or proprietary surface: GitHub Copilot cloud agent, Amp, Devin Desktop.
-- Several hosted assistants on one shared cloud computer passing work between themselves: Grok Bot.
+- Several hosted agents on one shared cloud computer passing work between themselves: Grok Bot.
 
 ## Agent company / control planes
 
@@ -76,7 +76,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 ## Hosted and proprietary products
 
-Proprietary or hosted products that coordinate several agents, read from each vendor's public docs on 2026-10-16 by someone outside the vendor, except Grok Bot. This list is maintained by Angel Hermon through Grok Bot agents, and Grok Bot agents may also review it. The Grok Bot entry is therefore a disclosed conflict of interest: it was added on the maintainer's explicit decision under the self-listing rule in CONTRIBUTING, recorded in the pull request that added it, is limited to what the vendor's public docs say, and had no independent review when added. None was run or tried, so isolation between agents, failure handling, and data handling are unchecked for every entry. The bar is in [CONTRIBUTING](CONTRIBUTING.md#hosted-and-proprietary-products).
+Proprietary or hosted products that coordinate several agents, read from each vendor's public docs on 2026-10-16 by someone outside the vendor, except Grok Bot. This list is maintained by Angel Hermon through Grok Bot agents, and Grok Bot agents may also review it. The Grok Bot entry is therefore a disclosed conflict of interest: it was added on the maintainer's explicit decision under the self-listing rule in CONTRIBUTING, recorded in the pull request that added it, is limited to what the vendor's public docs say, and was reviewed on that pull request by non-Grok models run by the maintainer, not by anyone independent of the maintainer. None was run or tried, so isolation between agents, failure handling, and data handling are unchecked for every entry. The bar is in [CONTRIBUTING](CONTRIBUTING.md#hosted-and-proprietary-products).
 
 - [Warp Oz](https://docs.warp.dev/platform/orchestration/) - Proprietary hosted platform (the Warp client is AGPL-3.0) where a parent agent spawns child agents locally or in cloud environments, one level deep, and exchanges messages and run states with them; not run.
 - [Devin](https://docs.devin.ai/work-with-devin/advanced-capabilities) - Proprietary hosted agent whose coordinator session starts child "managed Devins" in separate VMs, messages them, and is notified when they finish or need input; not run.
