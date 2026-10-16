@@ -1,10 +1,10 @@
 # Awesome Agent Orchestration [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> Curated open-source tools that already solve governed multi-agent work: tickets and runs, worktree isolation, software factories, and control planes.
+> Curated open-source tools that already solve governed multi-agent work: tickets and runs, worktree isolation, software factories, and control planes; hosted and proprietary products are listed in a separate section.
 
 Before building a private control plane for these problems, check whether one of the tools below already does the job, adopt it, and contribute upstream if it is missing a piece you need.
 
-Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein, takt), and herdr, Agent Deck, Archon, Claudexor and dmux have a clear lead author too, so check the bus factor before you depend on any of them.
+Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein, takt), and herdr, Agent Deck, Archon, Claudexor and dmux have a clear lead author too, so check the bus factor before you depend on any of them. The separate "Hosted and proprietary products" section is different: those entries were read from the vendors' public docs by someone outside each vendor, and none was run.
 
 ## Contents
 
@@ -14,6 +14,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - [Boards and governed runs](#boards-and-governed-runs)
 - [Workflow engines](#workflow-engines)
 - [Terminal session managers](#terminal-session-managers)
+- [Hosted and proprietary products](#hosted-and-proprietary-products)
 - [Related: observability](#related-observability)
 - [Anti-patterns](#anti-patterns)
 
@@ -28,11 +29,15 @@ Entries say what a project does, not what it markets, and carry its license and 
 - Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager, dmux.
 - Terminal session status across agents, with optional per-session worktrees: Agent Deck, Agent of Empires.
 - A persistent terminal runtime with an API agents can drive and optional worktrees: herdr.
+- The plain multiplexer underneath several of these, with no isolation or run log of its own: tmux.
 - A local board that runs CLI agents in parallel, one worktree per card (research preview): Cline Kanban.
 - A plan of tasks run across many CLI agents, a worktree per task, with a hash-chained run journal and auto-merge: Bernstein.
+- Tracker issues turned into per-issue agent runs by a polling daemon, with retries (OpenAI engineering preview, Elixir reference implementation): Symphony.
 - YAML workflows of agent steps, one worktree per run, with a recorded run status and transcript: Archon.
 - Queued tasks run through multi-step plan, implement, and review workflows in isolated clones: takt.
 - One control plane over several agent CLIs, with write turns kept as patches until you apply them: Claudexor.
+- A lead agent that spawns and coordinates child agents, as a hosted or proprietary product: Warp Oz, Devin, Factory Missions, Claude Code agent teams, OpenAI Codex, Kiro, Cursor.
+- Many parallel agent sessions managed from one hosted or proprietary surface: GitHub Copilot cloud agent, Amp, Devin Desktop.
 
 ## Agent company / control planes
 
@@ -51,6 +56,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 - [Cline Kanban](https://github.com/cline/kanban) - Apache-2.0 local web board that runs CLI agents (Claude Code, Codex, Gemini, and others) in parallel, one ephemeral Git worktree per card, and records each session's state and exit code; Research Preview.
 - [Bernstein](https://github.com/sipyourdrink-ltd/bernstein) - Apache-2.0 Python orchestrator that runs a plan file or goal across CLI agent adapters (Claude Code, Codex, Gemini, and many more), one Git worktree and branch per task, writes a hash-chained run journal, and merges each task's branch back into the current branch.
+- [Symphony](https://github.com/openai/symphony) - Apache-2.0 OpenAI engineering preview, a spec plus an Elixir reference implementation (prototype, evaluation only) that polls an issue tracker (Linear, GitHub Issues, Jira, Asana, GitLab), creates a workspace per issue, runs a Codex app-server agent in it up to a concurrency cap, and retries a crashed agent after a backoff, with the workspace contents left to your hook rather than a managed worktree.
 
 ## Workflow engines
 
@@ -65,6 +71,22 @@ Entries say what a project does, not what it markets, and carry its license and 
 - [herdr](https://github.com/herdrdev/herdr) - Apache-2.0 terminal runtime with a persistent background server that hosts agent panes, can create a Git worktree for a workspace outside the repository, and exposes a socket and CLI API that agents can drive, with no run log or failure record.
 - [Agent of Empires](https://github.com/agent-of-empires/agent-of-empires) - MIT Rust terminal session manager that runs each CLI agent (Claude Code, OpenCode, and others) in its own tmux session, with an optional Git worktree per session outside the repository and an Error state when the agent exits non-zero; about half its commits carry AI co-author trailers, and its telemetry is off unless you enable it.
 - [dmux](https://github.com/standardagents/dmux) - MIT TUI that runs inside tmux and gives each task a pane, a branch, and a Git worktree under `.dmux/worktrees/` in the repository, launching CLI agents (Claude Code, Codex, OpenCode, and others) with permission prompts skipped and autopilot (which auto-accepts agent prompts) on by default, and offering merge-back from a menu, with no run log or failure record.
+- [tmux](https://github.com/tmux/tmux) - ISC-licensed terminal multiplexer whose detached sessions keep a CLI agent running after you disconnect and can be listed with each pane's path and, with `remain-on-exit`, its exit status; it gives no file isolation, run log, or failure record by default, and several entries here are built on it.
+
+## Hosted and proprietary products
+
+Proprietary or hosted products that coordinate several agents, read from each vendor's public docs on 2026-10-16 by someone outside the vendor. None was run or tried, so isolation between agents, failure handling, and data handling are unchecked for every entry. The bar is in [CONTRIBUTING](CONTRIBUTING.md#hosted-and-proprietary-products).
+
+- [Warp Oz](https://docs.warp.dev/platform/orchestration/) - Proprietary hosted platform (the Warp client is AGPL-3.0) where a parent agent spawns child agents locally or in cloud environments, one level deep, and exchanges messages and run states with them; not run.
+- [Devin](https://docs.devin.ai/work-with-devin/advanced-capabilities) - Proprietary hosted agent whose coordinator session starts child "managed Devins" in separate VMs, messages them, and is notified when they finish or need input; not run.
+- [Factory Missions](https://factory.com/news/missions-architecture) - Proprietary Factory feature where an orchestrator agent plans a goal as features, a runner starts a fresh worker agent for each feature in order, and separate validator agents check each milestone; not run.
+- [Claude Code agent teams](https://code.claude.com/docs/en/agent-teams) - Experimental, off-by-default feature of the proprietary, local Claude Code in which a lead session spawns teammate sessions that message each other and, in sessions with the Task tools, share a task list; not run.
+- [OpenAI Codex](https://learn.chatgpt.com/docs/agent-configuration/subagents) - Proprietary local and hosted OpenAI agent (the Codex CLI is Apache-2.0) whose main thread, when asked, spawns parallel subagents that inherit its sandbox and approvals and return their results to it; not run.
+- [GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agent-capabilities/choosing-and-delegating-agent-work/agent-management) - Proprietary GitHub-hosted agent that runs multiple agent sessions concurrently from an Agents tab in each repository, with custom agents and steering of a running session; not run.
+- [Kiro](https://kiro.dev/docs/custom-agents/subagents/) - Proprietary IDE and CLI whose main agent spawns sub-agents that run in parallel, each with its own context window while sharing the workspace files and MCP servers, and aggregates their results; not run.
+- [Cursor](https://cursor.com/docs/subagents) - Proprietary editor and hosted service whose agent launches parallel subagents that share its checkout by default, or each get their own worktree or cloud VM and branch when asked; not run.
+- [Amp](https://ampcode.com/docs/orbs/agent-to-agent) - Proprietary hosted coding agent whose agents can start other agents in another project, an orb, or a runner machine, send them instructions and files, and bring results back into the current thread; not run.
+- [Devin Desktop](https://docs.devin.ai/desktop/agent-command-center) - Proprietary desktop IDE whose Agent Command Center is a kanban board, grouped by status, over local agent sessions and cloud Devin sessions on their own VMs; not run.
 
 ## Related: observability
 
@@ -78,6 +100,6 @@ Orchestration is not observability. For tracing, evals, guardrails, and MCP tool
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). PRs welcome for tools that are open source, actively maintained, and map to an item on the problem map. Show what you ran.
+See [CONTRIBUTING.md](CONTRIBUTING.md). PRs welcome for tools that are open source (hosted and proprietary products follow the separate bar in CONTRIBUTING), actively maintained, and map to an item on the problem map. Show what you ran.
 
 To the extent possible under law, Angel Hermon has waived all copyright and related or neighboring rights to this work. CC0 1.0, 2026.
