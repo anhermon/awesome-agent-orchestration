@@ -12,6 +12,12 @@ Every entry must be checked hands-on, not from its README. Fill in the real valu
 - License: <!-- SPDX id; note if open-core or source-available -->
 - I installed or ran it, and it did what the description says: <!-- commands + result; say what you could not test -->
 
+## Hosted or proprietary product only
+
+- Dated source for each claim (page URL, date read, the page's own date if it has one): <!-- list -->
+- What was not verified, as the entry states it: <!-- isolation, failure handling, data handling, trial -->
+- Affiliation or conflict of interest, if any: <!-- the vendor does not submit its own product -->
+
 ## Checklist
 
 - [ ] Entry follows the format `- [Name](link) - What it actually does.`
