@@ -4,6 +4,18 @@
 
 Open-source tools for governed multi-agent work: tickets and runs, worktree isolation, supervisors and task routing, kanban boards and control planes, harness and runtime coordination, and workflow engines whose job is to drive agents. General agent frameworks and libraries (LangGraph, CrewAI and the like) are building blocks, not orchestration products, and are out of scope unless orchestration is their core purpose. General team workspaces, chat front ends, and single-agent wrappers are out of scope. Tracing, evals, and guardrails belong in [awesome-agent-observability](https://github.com/anhermon/awesome-agent-observability).
 
+### Hosted and proprietary products
+
+The list is open-source first. A hosted or proprietary product can appear in a separate "Hosted and proprietary products" section, never mixed into the open-source sections, when all of these hold:
+
+- Coordinating several agents is a shipped, documented feature (agents hand off work, supervise child agents, or run in parallel with a shared task state), not a roadmap item or a keynote claim, and the product is generally available or in a public beta that anyone on a paid or free plan can join.
+- It is at least 8 weeks past its public launch, and its public docs explain setup and usage.
+- It has a dated changelog, release note, or documented update within the last 12 months, and no retirement notice.
+- The entry says it is proprietary and hosted (or proprietary and local), says what plan or account it needs, and names what was not verified. It describes behavior documented by the vendor and what a trial showed, not positioning.
+- It was verified from the vendor's public docs and, where a free tier or trial exists, a hands-on session by the submitter who is not affiliated with the vendor. A vendor, its employees, or its own agents do not submit the vendor's product; a third party can, and the PR discloses any affiliation.
+
+Thresholds 1 to 6 and 9 to 10 apply as written, reading "repository" as "product page and docs". Threshold 7 becomes "the entry states it is proprietary and what it costs or requires". Threshold 8 becomes "docs plus a hands-on trial where one exists", and the entry lists what could not be checked (isolation between agents, failure handling, data handling) instead of claiming it. Single-user personal assistants and chat products that do not coordinate several agents are out of scope.
+
 ## Thresholds
 
 These are the thresholds every entry is held to, at submission and at each audit.
