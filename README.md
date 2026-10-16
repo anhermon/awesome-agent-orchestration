@@ -27,6 +27,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager.
 - Terminal session status across agents, with optional per-session worktrees: Agent Deck.
 - A persistent terminal runtime with an API agents can drive and optional worktrees: herdr.
+- The plain multiplexer underneath several of these, with no isolation or run log of its own: tmux.
 - A local board that runs CLI agents in parallel, one worktree per card (research preview): Cline Kanban.
 - A plan of tasks run across many CLI agents, a worktree per task, with a hash-chained run journal and auto-merge: Bernstein.
 - YAML workflows of agent steps, one worktree per run, with a recorded run status and transcript: Archon.
@@ -61,6 +62,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - [ccmanager](https://github.com/kbwo/ccmanager) - MIT terminal app that runs Claude Code, Gemini CLI, Codex CLI, and other CLI agents in parallel, one Git worktree per session, shows busy, waiting, and idle states without needing tmux, and manages sessions only, with no tickets, run log, or failure record.
 - [Agent Deck](https://github.com/asheshgoplani/agent-deck) - MIT terminal session manager for Claude, Gemini, OpenCode, Codex, and other agents that can place a session in its own Git worktree under the repository's .worktrees folder and shows session status, including errors.
 - [herdr](https://github.com/herdrdev/herdr) - Apache-2.0 terminal runtime with a persistent background server that hosts agent panes, can create a Git worktree for a workspace outside the repository, and exposes a socket and CLI API that agents can drive, with no run log or failure record.
+- [tmux](https://github.com/tmux/tmux) - ISC-licensed terminal multiplexer whose detached sessions keep a CLI agent running after you disconnect and can be listed with each pane's path and, with `remain-on-exit`, its exit status; it gives no file isolation, run log, or failure record by default, and several entries here are built on it.
 
 ## Related: observability
 
