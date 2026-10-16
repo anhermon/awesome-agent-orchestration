@@ -4,7 +4,7 @@
 
 Before building a private control plane for these problems, check whether one of the tools below already does the job, adopt it, and contribute upstream if it is missing a piece you need.
 
-Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein, takt), and herdr, Agent Deck, Archon and Claudexor have a clear lead author too, so check the bus factor before you depend on any of them.
+Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein, takt), and herdr, Agent Deck, Archon, Claudexor and dmux have a clear lead author too, so check the bus factor before you depend on any of them.
 
 ## Contents
 
@@ -22,10 +22,11 @@ Entries say what a project does, not what it markets, and carry its license and 
 - Org chart, budgets, goals, and governance for a multi-agent "company": Paperclip.
 - Markdown tickets, staged pipelines with retries, any CLI agent: Kontora.
 - Many coding agents in parallel, each in its own Git worktree, with PR and CI state on one board: Agent Orchestrator.
+- A desktop app and scriptable CLI that run agents side by side, a worktree each, with a headless runtime: Orca.
 - GitHub issues to per-issue worktrees and PR status, headless agent CLIs: Vigilante.
 - Plan, build, and review loops in isolated worktrees (early preview): Fusion.
-- Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager.
-- Terminal session status across agents, with optional per-session worktrees: Agent Deck.
+- Parallel agent sessions in a terminal, one worktree each: Claude Squad, ccmanager, dmux.
+- Terminal session status across agents, with optional per-session worktrees: Agent Deck, Agent of Empires.
 - A persistent terminal runtime with an API agents can drive and optional worktrees: herdr.
 - A local board that runs CLI agents in parallel, one worktree per card (research preview): Cline Kanban.
 - A plan of tasks run across many CLI agents, a worktree per task, with a hash-chained run journal and auto-merge: Bernstein.
@@ -42,6 +43,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 - [Kontora](https://github.com/worksonmyai/kontora) - Apache-2.0 tool that keeps tickets as markdown files and runs them through multi-stage pipelines with retries, one worktree and tmux session per ticket, a web and TUI kanban, and any CLI agent.
 - [Agent Orchestrator](https://github.com/OrchestratorInc/agent-orchestrator) - Apache-2.0 local daemon and desktop app that spawns coding agents (Claude Code, Codex, Cursor, opencode, and others) into per-task Git worktrees, with an orchestrator agent and a board of PR, CI, and review state, ticket intake behind a flag, and remote telemetry in production desktop releases that can include your GitHub owner or username.
+- [Orca](https://github.com/stablyai/orca) - MIT Electron desktop app with a scriptable `orca` CLI and a headless `orca serve` runtime that launches CLI agents (Claude Code, Codex, OpenCode, and others) in one Git worktree per task outside the repository with permission prompts skipped by default; launching an agent into a worktree records no failure beyond the terminal output, its orchestration commands were not verified, and it sends anonymous usage telemetry by default (opt out with `DO_NOT_TRACK=1` or `ORCA_TELEMETRY_DISABLED=1`).
 - [Vigilante](https://github.com/aliengiraffe/vigilante) - Apache-2.0 Go CLI and daemon that turns GitHub issues into per-issue Git worktrees and branches, launches a headless coding-agent CLI (Codex, Claude Code, Gemini, opencode) in each, and records session state, blocked reasons, and PR status, with GitHub as the only issue backend.
 - [Fusion](https://github.com/Runfusion/Fusion) - Early-preview MIT-licensed software factory that runs plan, build, and review loops in isolated worktrees, with workflows and a dashboard, against any model.
 
@@ -61,6 +63,8 @@ Entries say what a project does, not what it markets, and carry its license and 
 - [ccmanager](https://github.com/kbwo/ccmanager) - MIT terminal app that runs Claude Code, Gemini CLI, Codex CLI, and other CLI agents in parallel, one Git worktree per session, shows busy, waiting, and idle states without needing tmux, and manages sessions only, with no tickets, run log, or failure record.
 - [Agent Deck](https://github.com/asheshgoplani/agent-deck) - MIT terminal session manager for Claude, Gemini, OpenCode, Codex, and other agents that can place a session in its own Git worktree under the repository's .worktrees folder and shows session status, including errors.
 - [herdr](https://github.com/herdrdev/herdr) - Apache-2.0 terminal runtime with a persistent background server that hosts agent panes, can create a Git worktree for a workspace outside the repository, and exposes a socket and CLI API that agents can drive, with no run log or failure record.
+- [Agent of Empires](https://github.com/agent-of-empires/agent-of-empires) - MIT Rust terminal session manager that runs each CLI agent (Claude Code, OpenCode, and others) in its own tmux session, with an optional Git worktree per session outside the repository and an Error state when the agent exits non-zero; about half its commits carry AI co-author trailers, and its telemetry is off unless you enable it.
+- [dmux](https://github.com/standardagents/dmux) - MIT TUI that runs inside tmux and gives each task a pane, a branch, and a Git worktree under `.dmux/worktrees/` in the repository, launching CLI agents (Claude Code, Codex, OpenCode, and others) with permission prompts skipped and autopilot (which auto-accepts agent prompts) on by default, and offering merge-back from a menu, with no run log or failure record.
 
 ## Related: observability
 
