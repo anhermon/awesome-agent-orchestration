@@ -34,6 +34,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - Several named assistants passing work between themselves in one thread, hosted, on one shared computer: Grok Bot.
 - A local board that runs CLI agents in parallel, one worktree per card (research preview): Cline Kanban.
 - A plan of tasks run across many CLI agents, a worktree per task, with a hash-chained run journal and auto-merge: Bernstein.
+- Tracker issues turned into per-issue agent runs by a polling daemon, with retries (OpenAI engineering preview, Elixir reference implementation): Symphony.
 - YAML workflows of agent steps, one worktree per run, with a recorded run status and transcript: Archon.
 - Queued tasks run through multi-step plan, implement, and review workflows in isolated clones: takt.
 - One control plane over several agent CLIs, with write turns kept as patches until you apply them: Claudexor.
@@ -54,6 +55,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 - [Cline Kanban](https://github.com/cline/kanban) - Apache-2.0 local web board that runs CLI agents (Claude Code, Codex, Gemini, and others) in parallel, one ephemeral Git worktree per card, and records each session's state and exit code; Research Preview.
 - [Bernstein](https://github.com/sipyourdrink-ltd/bernstein) - Apache-2.0 Python orchestrator that runs a plan file or goal across CLI agent adapters (Claude Code, Codex, Gemini, and many more), one Git worktree and branch per task, writes a hash-chained run journal, and merges each task's branch back into the current branch.
+- [Symphony](https://github.com/openai/symphony) - Apache-2.0 OpenAI engineering preview, a spec plus an Elixir reference implementation (prototype, evaluation only) that polls an issue tracker (Linear, GitHub Issues, Jira, Asana, GitLab), creates a workspace per issue, runs a Codex app-server agent in it up to a concurrency cap, and retries a crashed agent after a backoff, with the workspace contents left to your hook rather than a managed worktree.
 
 ## Workflow engines
 
