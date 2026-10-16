@@ -4,7 +4,7 @@
 
 Before building a private control plane for these problems, check whether one of the tools below already does the job, adopt it, and contribute upstream if it is missing a piece you need.
 
-Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein, takt), and herdr, Agent Deck, Archon, Claudexor and dmux have a clear lead author too, so check the bus factor before you depend on any of them. The separate "Hosted and proprietary products" section is different: those entries were read from the vendors' public docs by someone outside each vendor, and none was run.
+Entries say what a project does, not what it markets, and carry its license and maturity where that matters. Tools that could not be run, or that were dormant, young, or undocumented-in-practice, were left out. Hands-on checks are recorded on the pull request for the tools that were actually run; this list does not claim that every entry was checked. Several entries are written mostly by one person (Kontora, Vigilante, Fusion, ccmanager, Cline Kanban, Bernstein, takt), and herdr, Agent Deck, Archon, Claudexor and dmux have a clear lead author too, so check the bus factor before you depend on any of them. The separate "Hosted and proprietary products" section is different: those entries were read from the vendors' public docs by someone outside each vendor (Grok Bot is a disclosed exception, see that section), and none was run.
 
 ## Contents
 
@@ -75,7 +75,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 
 ## Hosted and proprietary products
 
-Proprietary or hosted products that coordinate several agents, read from each vendor's public docs on 2026-10-16 by someone outside the vendor. None was run or tried, so isolation between agents, failure handling, and data handling are unchecked for every entry. The bar is in [CONTRIBUTING](CONTRIBUTING.md#hosted-and-proprietary-products).
+Proprietary or hosted products that coordinate several agents, read from each vendor's public docs on 2026-10-16 by someone outside the vendor, except Grok Bot. This list is maintained by Angel Hermon through Grok Bot agents, so the Grok Bot entry is a disclosed conflict of interest, added at the owner's explicit request with the self-listing rule waived in the pull request that added it, and limited to what the vendor's public docs say. None was run or tried, so isolation between agents, failure handling, and data handling are unchecked for every entry. The bar is in [CONTRIBUTING](CONTRIBUTING.md#hosted-and-proprietary-products).
 
 - [Warp Oz](https://docs.warp.dev/platform/orchestration/) - Proprietary hosted platform (the Warp client is AGPL-3.0) where a parent agent spawns child agents locally or in cloud environments, one level deep, and exchanges messages and run states with them; not run.
 - [Devin](https://docs.devin.ai/work-with-devin/advanced-capabilities) - Proprietary hosted agent whose coordinator session starts child "managed Devins" in separate VMs, messages them, and is notified when they finish or need input; not run.
@@ -87,6 +87,7 @@ Proprietary or hosted products that coordinate several agents, read from each ve
 - [Cursor](https://cursor.com/docs/subagents) - Proprietary editor and hosted service whose agent launches parallel subagents that share its checkout by default, or each get their own worktree or cloud VM and branch when asked; not run.
 - [Amp](https://ampcode.com/docs/orbs/agent-to-agent) - Proprietary hosted coding agent whose agents can start other agents in another project, an orb, or a runner machine, send them instructions and files, and bring results back into the current thread; not run.
 - [Devin Desktop](https://docs.devin.ai/desktop/agent-command-center) - Proprietary desktop IDE whose Agent Command Center is a kanban board, grouped by status, over local agent sessions and cloud Devin sessions on their own VMs; not run.
+- [Grok Bot](https://docs.x.ai/grok-bot/overview) - Proprietary hosted product whose Bots message each other, share context in group chats, and pass task ownership, while all of an account's Bots use one cloud computer with shared files and logins; not run.
 
 ## Related: observability
 
