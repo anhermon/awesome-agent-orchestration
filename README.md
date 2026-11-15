@@ -39,6 +39,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - A lead agent that spawns and coordinates child agents, as a hosted or proprietary product: Warp Oz, Devin, Factory Missions, Claude Code agent teams, OpenAI Codex, Kiro, Cursor.
 - Many parallel agent sessions managed from one hosted or proprietary surface: GitHub Copilot cloud agent, Amp, Devin Desktop.
 - Several hosted agents on one shared cloud computer passing work between themselves: Grok Bot.
+- Routing each new message from a coding agent between a cheap model group and a primary one, with no per-task isolation: HiRoute.
 
 ## Agent company / control planes
 
@@ -52,6 +53,7 @@ Entries say what a project does, not what it markets, and carry its license and 
 - [Orca](https://github.com/stablyai/orca) - MIT Electron desktop app with a scriptable `orca` CLI and a headless `orca serve` runtime that launches CLI agents (Claude Code, Codex, OpenCode, and others) in one Git worktree per task outside the repository with permission prompts skipped by default; launching an agent into a worktree records no failure beyond the terminal output, its orchestration commands were not verified, and it sends anonymous usage telemetry by default (opt out with `DO_NOT_TRACK=1` or `ORCA_TELEMETRY_DISABLED=1`).
 - [Vigilante](https://github.com/aliengiraffe/vigilante) - Apache-2.0 Go CLI and daemon that turns GitHub issues into per-issue Git worktrees and branches, launches a headless coding-agent CLI (Codex, Claude Code, Gemini, opencode) in each, and records session state, blocked reasons, and PR status, with GitHub as the only issue backend.
 - [Fusion](https://github.com/Runfusion/Fusion) - Early-preview MIT-licensed software factory that runs plan, build, and review loops in isolated worktrees, with workflows and a dashboard, against any model.
+- [HiRoute](https://github.com/higress-group/HiRoute) - Local daemon and CLI that registers models, including local Ollama ones, into economical and primary groups and routes each new user message between them with built-in heuristic rules; its docs also describe a hosted decision model and connectors for Codex, Claude Code, Pi, and OpenCode. It does not isolate work per task; Apache-2.0.
 
 ## Boards and governed runs
 
